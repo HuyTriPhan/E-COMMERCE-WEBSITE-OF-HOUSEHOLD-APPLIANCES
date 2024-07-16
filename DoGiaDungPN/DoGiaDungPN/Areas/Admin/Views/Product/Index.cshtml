@@ -1,0 +1,47 @@
+﻿@model IEnumerable<DoGiaDungPN.Models.Product>
+@{
+    ViewData["Title"] = "Trang sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách sản phẩm</title>
+    <link rel="stylesheet" href="~/css/Admin.css" asp-append-version="true" />
+</head>
+<body>
+    <h2>Danh sách sản phẩm</h2>
+    <a asp-area="Admin" asp-controller="Product" asp-action="Add">Tạo mới sản phẩm</a>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Tên</th>
+                <th>Giá</th>
+                <th>Mô tả</th>
+                <th>Ảnh</th>
+                <th>Loại</th>
+                <th>Chức năng</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td data-label="Tên">@product.Name</td>
+                    <td data-label="Giá">@product.Price</td>
+                    <td data-label="Mô tả">@product.Description</td>
+                    <td data-label="Ảnh"><img src="@Url.Content(product.ImageUrl)" alt="Product Image" /></td>
+                    <td data-label="Loại">@product.CategoryId</td>
+                    <td data-label="Chức năng">
+                        <a asp-action="Display" asp-route-id="@product.Id">Chi tiết</a> |
+                        <a asp-action="Update" asp-route-id="@product.Id">Cập nhật</a> |
+                        <a asp-action="Delete" asp-route-id="@product.Id">Xóa</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>
+</html>

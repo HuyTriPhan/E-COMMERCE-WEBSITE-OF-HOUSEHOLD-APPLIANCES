@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Home | E-Shopper</title>
+    <link href="~/Content/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.css" rel="stylesheet">
+    <link href="~/Content/css/prettyPhoto.css" rel="stylesheet">
+    <link href="~/Content/css/price-range.css" rel="stylesheet">
+    <link href="~/Content/css/animate.css" rel="stylesheet">
+    <link href="~/Content/css/main.css" rel="stylesheet">
+    <link href="~/Content/css/responsive.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="~/Content/js/html5shiv.js"></script>
+    <script src="~/Content/js/respond.min.js"></script>
+    <![endif]-->
+    <link rel="shortcut icon" href="images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+
+<body>
+    <header>
+        <header id="header">
+            <!--header-->
+            <header id="header">
+                <!--header-->
+                <div class="header_top">
+                    <!--header_top-->
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-5">
+                                <div class="contactinfo">
+                                    <ul class="nav nav-pills">
+                                        <li><a href="#"><i class="fa fa-phone"></i> +2 95 01 88 821</a></li>
+                                        <li><a href="#"><i class="fa fa-envelope"></i> info@domain.com</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-3">
+                                <div class="social-icons">
+                                    <ul class="nav navbar-nav">
+                                        
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="shop-menu" style="display: flex; justify-content: flex-end; align-items: center;">
+                                    <ul class="nav navbar-nav" style="display: flex; align-items: center; list-style: none; padding-left: 0; margin: 0;">
+                                        <li style="margin-right: 15px;"><partial name="_LoginPartial" /></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--/header_top-->
+            </header>
+            <!--/header_top-->
+
+            <div class="header-middle" style="padding: 10px 0;">
+                <!--header-middle-->
+                <div class="container">
+                    <div class="row" style="display: flex; align-items: center;">
+                        <div class="col-sm-2">
+                            <div class="logo" style="display: flex; align-items: center; margin-right: 15px;">
+                                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                                    <img src="/images/LogoPn.jpg" style="width: 150px; height: 70px;">
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-10" style="display: flex; align-items: center;">
+                            <div style="flex: 1; display: flex; align-items: center;">
+                                <form class="search_form" asp-controller="Home" asp-action="Index" method="get" style="width: 100%; display: flex; align-items: center;">
+                                    <input type="text" name="query" placeholder="Search" style="width: calc(100% - 110px); padding: 13px;"> <!-- 100% - 100px (width của button) - 10px (margin-left của button) = 110px -->
+                                    <button type="submit" class="btn btn-primary" style="width: 100px; margin-left: 10px;">Tìm kiếm</button>
+                                </form>
+
+                            </div>
+                            <div style="display: flex; justify-content: flex-end; margin-left: 20px;">
+                                <form class="d-flex" asp-controller="ShoppingCart" asp-action="Index">
+                                    <button class="btn btn-outline-dark" type="submit" style="display: flex; align-items: center;">
+                                        <i class="bi-cart-fill me-1">Giỏ hàng</i>
+                                        <span class="badge bg-danger text-white" id="badge-cart">0</span>
+                                    </button>
+                                </form>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--/header-middle-->
+
+         </header>
+            <!--/header-bottom-->
+
+
+
+        <section>
+            <div class="container">
+                <div class="row">
+
+                    @RenderBody()
+                </div>
+            </div>
+        </section>
+
+
+
+        <footer id="footer">
+            <!--Footer-->
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="companyinfo">
+                                <h2><span>PN</span>-shop</h2>
+                                <p>Giá rẻ-Đẳng Cấp-Chất Lượng</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-widget">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>CHĂM SÓC KHÁCH HÀNG</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">Trung Tâm Trợ Giúp</a></li>
+                                    <li><a href="#">Hướng Dẫn Mua Hàng</a></li>
+                                    <li><a href="#">Hướng Dẫn Bán Hàng</a></li>
+                                    <li><a href="#">Thanh Toán</a></li>
+                                    <li><a href="#">Vận Chuyển</a></li>
+                                    <li><a href="#">Chăm Sóc Khách Hàng</a></li>
+                                    <li><a href="#">Chính Sách Bảo Hành</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>VỀ SHOP</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">Giới Thiệu Về PN Shop</a></li>
+                                    <li><a href="#">Tuyển Dụng</a></li>
+                                    <li><a href="#">Chính Sách Bảo Mật</a></li>
+                                    <li><a href="#">Chính Hãng</a></li>
+                                    <li><a href="#">Liên Hệ</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>THEO DÕI CHÚNG TÔI TRÊN</h2>
+                                <ul class="nav nav-pills nav-stacked">
+                                    <li><a href="#">Facebook</a></li>
+                                    <li><a href="#">Instagram</a></li>
+                                    <li><a href="#">LinkedIn</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-sm-2">
+                            <div class="single-widget">
+                                <h2>THANH TOÁN</h2>
+                                <ul class="nav nav-pills nav-stacked" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                                    <li style="flex: 1 0 30%;">
+                                        <!-- Đặt 30% chiều rộng cho mỗi icon -->
+                                        <img src="~/images/acb.png" alt="" style="width: 100%; height: auto;">
+                                    </li>
+                                    <li style="flex: 1 0 30%;">
+                                        <img src="~/images/TP.jpg" alt="" style="width: 100%; height: auto;">
+                                    </li>
+                                    <li style="flex: 1 0 30%;">
+                                        <img src="~/images/TCB.png" alt="" style="width: 100%; height: auto;">
+                                    </li>
+                                    <li style="flex: 1 0 30%;">
+                                        <img src="~/images/VCB.jpg" alt="" style="width: 100%; height: auto;">
+                                    </li>
+                                    <li style="flex: 1 0 30%;">
+                                        <img src="~/images/Viettin.jpg" alt="" style="width: 100%; height: auto;">
+                                    </li>
+                                    <li style="flex: 1 0 30%;">
+                                        <img src="~/images/MSB.png" alt="" style="width: 100%; height: auto;">
+                                    </li>
+                                    <li style="flex: 1 0 30%;">
+                                        <img src="~/images/Logo-ngan-hang-BIDV.png" alt="" style="width: 100%; height: auto;">
+                                    </li>
+                                    <li style="flex: 1 0 30%;">
+                                        <img src="~/images/AGRIBANK.jpg" alt="" style="width: 100%; height: auto;">
+                                    </li>
+                                    <!-- Thêm các biểu tượng thanh toán ngân hàng khác tương tự -->
+                                </ul>
+
+
+                            </div>
+                        </div>
+                        <div class="col-sm-3 col-sm-offset-1">
+                            <div class="single-widget">
+                                <h2>Về Shop</h2>
+                                <form action="#" class="searchform">
+                                    <input type="text" placeholder="Email" />
+                                    <button type="submit" class="btn btn-default"><i class="fa fa-arrow-circle-o-right"></i></button>
+                                  
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <div class="container">
+                    <div class="row">
+                        <p class="pull-left">© 2024 PN-Shop. Tất cả các quyền được bảo lưu.</p>
+                    </div>
+                </div>
+            </div>
+
+        </footer><!--/Footer-->
+
+
+
+        <script src="~/Content/js/jquery.js"></script>
+        <script src="~/Content/js/bootstrap.min.js"></script>
+        <script src="~/Content/js/jquery.scrollUp.min.js"></script>
+        <script src="~/Content/js/price-range.js"></script>
+        <script src="~/Content/js/jquery.prettyPhoto.js"></script>
+        <script src="~/Content/js/main.js"></script>
+        <script src="~/lib/jquery/dist/jquery.min.js"></script>
+        <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="~/js/site.js" asp-append-version="true"></script>
+
+        <script>
+            $(document).ready(function () {
+                loadData();
+                function loadData() {
+                    $.ajax({
+                        url: '@Url.Action("IndexAJAX", "ShoppingCart")',
+                        type: 'GET',
+                        success: function (data) {
+                            if (data && data.success && data.data) {
+                                $("#badge-cart").html(data.data);
+                            }
+                        },
+                        error: function () {
+                            alert('Đã xảy ra lỗi khi tải dữ liệu giỏ hàng.');
+                        }
+                    });
+                }
+                $('.add-to-cart-btn').click(function (e) {
+                    e.preventDefault();
+                    var productId = $(this).siblings('.Id-input').val();
+                    var quantity = $(this).siblings('.quantity-input').val();
+                    $.ajax({
+                        url: '@Url.Action("AddToCartAjax", "ShoppingCart")',
+                        type: 'POST',
+                        data: { productId: productId, quantity: quantity },
+                        success: function (data) {
+                            if (data && data.success && data.data) {
+                                $("#badge-cart").html(data.data);
+                            }
+                            alert('Sản phẩm đã được thêm vào giỏ hàng.');
+                        },
+                        error: function () {
+                            alert('Đã xảy ra lỗi khi thêm sản phẩm vào giỏ hàng.');
+                        }
+                    });
+                });
+            });
+        </script>
+        @await RenderSectionAsync("Scripts", required: false)
+    </header>
+</body>
+
+</html>
+

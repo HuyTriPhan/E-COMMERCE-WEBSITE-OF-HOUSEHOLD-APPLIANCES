@@ -1,0 +1,28 @@
+﻿@model DoGiaDungPN.Models.Product
+
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chi tiết sản phẩm</title>
+    <link rel="stylesheet" href="~/css/Admin.css" asp-append-version="true" />
+</head>
+<body>
+    <h2>Chi tiết sản phẩm</h2>
+    <h3>@Model.Name</h3>
+    <div>
+        <h3>Price: @Model.Price</h3>
+        <p>@Model.Description</p>
+        @if (!string.IsNullOrEmpty(Model.ImageUrl))
+        {
+            <img src="@Model.ImageUrl" alt="Product Image" style="max-width:200px;" />
+        }
+    </div>
+    <a asp-action="Index">Quay lại</a>
+</body>
+</html>

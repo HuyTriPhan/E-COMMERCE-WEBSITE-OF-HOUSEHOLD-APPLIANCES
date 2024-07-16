@@ -1,0 +1,76 @@
+﻿@model DoGiaDungPN.Models.Product
+
+@{
+    ViewData["Title"] = "Details";
+
+}
+
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-section" style="background-size: cover; background-position: center; background-repeat: no-repeat; width: 100%; height: 150px; background-image: url('/images/do-gia-dung.jpg');">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <div class="breadcrumb__text" style="padding-top: 50px;">
+                    <h2 style="color:#FFFFFF;">Chi Tiết Sản Phẩm</h2>
+                    <div class="breadcrumb__option">
+                        <a asp-action="Index" asp-controller="Home" style="color: #FFFFFF; margin: 0 5px;">Trang Chủ</a>
+                        <span style="color: #FFFFFF; margin: 0 5px;">Chi Tiết Sản Phẩm</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
+
+<body>
+    <!-- Product Details Section Begin -->
+    <section class="product-details spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Phần hiển thị ảnh sản phẩm -->
+                    <img src="@Model.ImageUrl" class="card-img-top" alt="..." style="height: 300px; object-fit: contain;" />
+                </div>
+                <div class="col-md-6">
+                    <!-- Phần hiển thị các thông tin chi tiết -->
+                    <div class="product-details">
+                        <h1>@Model.Name</h1>
+                        <dl class="row">
+                            <dt class="col-sm-3">Mã:</dt>
+                            <dd class="col-sm-9">@Model.Id</dd>
+
+                            <dt class="col-sm-3">Giá:</dt>
+                            <dd class="col-sm-9">@Model.Price</dd>
+
+                            <!-- Thêm các thông tin khác về sản phẩm tại đây -->
+                            <dt class="col-sm-4">Chi tiết sản phẩm:</dt>
+                            <dd class="col-sm-7">@Model.Description</dd>
+
+                            <dt class="col-sm-3">Loại sản phẩm:</dt>
+                            <dd class="col-sm-9">@Model.Category.Name</dd>
+
+                            <!-- Và các thông tin khác tùy thuộc vào mô hình dữ liệu của bạn -->
+                        </dl>
+                        <div class="product-container">
+                            <h4>Số Lượng:</h4>
+                            <div class="product-container">
+                                <input type="hidden" type="text" name="Id" value="@Model.Id" class="form-control Id-input mb-2" />
+                                <input type="number" name="quantity" value="1" class="form-control quantity-input mb-2" />
+                                <button class="add-to-cart-btn btn btn-outline-dark">
+                                    <i class="bi-cart-fill me-1"></i> Thêm vào giỏ hàng
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Product Details Section End -->
+    <!-- Related Product Section Begin -->
+    <!-- Related Product Section End -->
+
+</body>
+
+
